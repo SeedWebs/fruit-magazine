@@ -25,3 +25,9 @@ function fruit_scripts() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'fruit_scripts' , 20 );
+
+function replace_repeater_field( $where ) {
+	$where = str_replace("meta_key = 'authors_$", "meta_key LIKE 'authors_%", $where);
+	return $where;
+}
+add_filter('posts_where', 'replace_repeater_field');

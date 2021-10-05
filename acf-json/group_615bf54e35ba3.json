@@ -1,0 +1,97 @@
+{
+    "key": "group_615bf54e35ba3",
+    "title": "Author",
+    "fields": [
+        {
+            "key": "field_615bf574c16f2",
+            "label": "Authors",
+            "name": "authors",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_615bf589c16f3",
+                    "label": "Author",
+                    "name": "author",
+                    "type": "user",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "role": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_615bf58fc16f4",
+                    "label": "Positions",
+                    "name": "positions",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Writer": "Writer",
+                        "Graphic Designer": "Graphic Designer",
+                        "Photographer": "Photographer",
+                        "Writer & Photographer": "Writer & Photographer",
+                        "Producer": "Producer",
+                        "Creative": "Creative",
+                        "Editor": "Editor",
+                        "Director": "Director",
+                        "Assistant Director": "Assistant Director",
+                        "Camera Crew": "Camera Crew",
+                        "Subtitler": "Subtitler"
+                    },
+                    "default_value": "Writer",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "label",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1633420482
+}
