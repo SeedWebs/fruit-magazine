@@ -28,31 +28,44 @@
         <?php do_action('plant_before_entry_author'); ?>
 
         <?php if( have_rows('authors') ): ?>
+
+        <?php 
+        $num = 0;
+        while( have_rows('authors') ) : the_row();  
+            $num++;
+        endwhile;
+        ?>
         <div class="sec-author">
-            <?php 
-                while( have_rows('authors') ) : the_row();
-                
-                $author = get_sub_field('author');
-                $position = get_sub_field('positions');
-                            
-                if( $author ): ?>
-            <div class="box-author">
-                <div class="pic">
-                    <a href="<?php echo get_author_posts_url($author->ID); ?>"
-                        rel="author"><?php echo get_avatar($author->ID); ?></a>
-                </div>
-                <div class="info">
-                    <h2><?php echo $position; ?></h2>
-                    <a href="<?php echo get_author_posts_url($author->ID); ?>"><?php echo $author->display_name;?></a>
-                    <?php if( $author->user_description ): ?>
-                    <p><?php echo $author->user_description; ?></p>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <?php
-                endif;
-                endwhile;
-            ?>
+
+            <div class="s-grid -d<?php echo $num; ?>">
+                <?php 
+                    while( have_rows('authors') ) : the_row();
+                        
+                        $author = get_sub_field('author');
+                        $position = get_sub_field('positions');
+                                    
+                        if( $author ): ?>
+
+                        <div class="author">
+                            <h2 class="s-title"><?php echo $position; ?></h2>
+                            <div class="entry-author">
+                                <div class="pic">
+                                    <a href="<?php echo get_author_posts_url($author->ID); ?>"
+                                        rel="author"><?php echo get_avatar($author->ID); ?></a>
+                                </div>
+                                <div class="info">
+                                    <h3><a href="<?php echo get_author_posts_url($author->ID); ?>"><?php echo $author->display_name;?></a></h3>
+                                    <?php if( $author->user_description ): ?>
+                                    <p><?php echo $author->user_description; ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                        endif;
+                    endwhile;
+                ?>
+             </div>
         </div>
         <?php endif; ?>
         <?php do_action('plant_end_entry_content'); ?>
